@@ -2,6 +2,9 @@
 #include <vector>
 #include <algorithm>
 #include <fstream>
+#include <string>
+
+using namespace std;
 
 class Sprite
 {
@@ -20,8 +23,21 @@ void LoadXML(const char* filename, std::vector<Sprite>& sprites)
 	sprites.clear();
 
 	std::ifstream file(filename, std::ifstream::binary);
-	std::string line;
+	string line;
+	string searchSprite{ R"(<sprite)" };
+	string newString;
+	
+	std::getline(file, line);
 
+	size_t start = line.find(searchSprite);
+
+	if (start != std::string::npos)
+	{
+
+	}
+
+
+	
 }
 
 int main()
